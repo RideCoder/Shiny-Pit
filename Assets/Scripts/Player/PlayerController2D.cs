@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerController2D : MonoBehaviour
@@ -9,9 +10,11 @@ public class PlayerController2D : MonoBehaviour
     public PlayerStats playerStats;
     private Rigidbody2D rb;
     private Collider2D col;
-    private float moveInput;
+    public float moveInput;
     private bool jumpPressed;
     private float modifiedMoveSpeed;
+
+    public event Action OnPlayerMoved;
 
     private void Awake()
     {
@@ -29,10 +32,16 @@ public class PlayerController2D : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
             jumpPressed = true;
+       
     }
 
     private void FixedUpdate()
     {
+
+        if (moveInput != 0)
+        {
+            OnPlayerMoved?.Invoke();
+        }
         // Horizontal movement
         rb.linearVelocity = new Vector2(moveInput * modifiedMoveSpeed, rb.linearVelocity.y);
 

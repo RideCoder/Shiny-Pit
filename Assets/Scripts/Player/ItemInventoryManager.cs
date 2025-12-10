@@ -4,7 +4,7 @@ using UnityEngine;
 public class ItemInventoryManager : MonoBehaviour
 {
     public Inventory inventory;
-    public PlayerState playerState;
+    public WorldState worldState;
     public void Start()
     {
         inventory.OnItemAddedToInventory += ItemAdded;
@@ -14,7 +14,7 @@ public class ItemInventoryManager : MonoBehaviour
         Debug.Log("ITEM ADDED");
             if (item is SpecialItemSO specialItem)
             {
-                specialItem.specialItem.GetComponent<BaseItem>().AddToPlayer(playerState);
+                specialItem.specialItem.GetComponent<BaseItem>().AddToPlayer(worldState);
             }
         }
 }

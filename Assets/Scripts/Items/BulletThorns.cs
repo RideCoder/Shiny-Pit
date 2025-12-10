@@ -2,8 +2,25 @@ using UnityEngine;
 
 public class BulletThorns : BaseItem
 {
-    public override void AddToPlayer(PlayerState playerState)
+    private WorldState worldState;
+    public GameObject projectilePrefab;
+ 
+    public override void AddToPlayer(WorldState wS)
     {
-        Debug.Log("Thorns!");
+        worldState = wS;
+        wS.playerController.OnPlayerMoved += PlayerMoved;
+    }
+
+    public void PlayerMoved()
+    {
+        if (Random.Range(0f, 1f) <= 0.1f)
+        {
+            GameObject proj = Instantiate(projectilePrefab, worldState.playerController.gameObject.transform.position + new Vector3(0, 10, 0), Quaternion.identity);
+
+            Projectile projectile = proj.GetComponent<Projectile>();
+            projectile.damage = 5;
+            projectile.tilemapData = worldState.tilemapData;
+            projectile.Shoot(new Vector3(0, 0, 0));
+        }
     }
 }

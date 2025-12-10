@@ -94,8 +94,8 @@ public class WeaponInventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
-        {
+       // if (Input.GetMouseButton(0))
+      //  {
            foreach (PlayerWeapon weapon in weapons)
             {
 
@@ -104,7 +104,7 @@ public class WeaponInventoryManager : MonoBehaviour
            
             }
            
-        }
+     //   }
 
         /*
         foreach (var weapon in weapons)

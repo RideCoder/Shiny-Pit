@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9061724738262225927}
   - component: {fileID: 3581060501235598841}
   m_Layer: 0
-  m_Name: Special Item
+  m_Name: Thorns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,3 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47e3f10e92c2189408870cd42c327259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 6387833315367779100, guid: d0e2191d38e677442a73db0ebb8878af, type: 3}

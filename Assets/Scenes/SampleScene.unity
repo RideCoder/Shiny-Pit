@@ -1055,7 +1055,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2056,9 +2056,7 @@ MonoBehaviour:
   UIElement: {fileID: 3326225722998816236, guid: 103d6699f3b7442418b8d36484655821, type: 3}
   recipeView: {fileID: 1731255618}
   craftingRecipes:
-  - {fileID: 11400000, guid: ffe9d385eb8c30c40aecef8961511f69, type: 2}
-  - {fileID: 11400000, guid: 074b2a4b02eb9084594c60bf29495066, type: 2}
-  - {fileID: 11400000, guid: ea057d714137331459fc3c4b1033808b, type: 2}
+  - {fileID: 11400000, guid: ce236602d643c9249816176d4d6351de, type: 2}
 --- !u!4 &974063989
 Transform:
   m_ObjectHideFlags: 0
@@ -2069,6 +2067,54 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 585.13416, y: 1008.8011, z: -1.0680276}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1302724601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1302724603}
+  - component: {fileID: 1302724602}
+  m_Layer: 0
+  m_Name: WorldState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1302724602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302724601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6782ae95e82f18c4e937a3e204d32db2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerState: {fileID: 1587355166}
+  playerStats: {fileID: 1587355165}
+  playerController: {fileID: 1587355161}
+  tilemapData: {fileID: 215417561}
+--- !u!4 &1302724603
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302724601}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1118.8286, y: 497.73413, z: -1.5778342}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2538,12 +2584,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
-  jumpForce: 12
+  jumpForce: 19
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   groundCheckDistance: 0.1
   playerStats: {fileID: 1587355165}
+  moveInput: 0
 --- !u!61 &1587355162
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3122,7 +3169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2120861444}
-  - component: {fileID: 2120861443}
+  - component: {fileID: 2120861445}
   m_Layer: 0
   m_Name: InventoryManager
   m_TagString: Untagged
@@ -3130,20 +3177,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2120861443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2120861442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb2dc716c71527945a9e6b6bbcf7adbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
-  playerStats: {fileID: 0}
 --- !u!4 &2120861444
 Transform:
   m_ObjectHideFlags: 0
@@ -3159,6 +3192,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2120861445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120861442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb2dc716c71527945a9e6b6bbcf7adbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 1587355164}
+  worldState: {fileID: 1302724602}
 --- !u!1 &2146495057
 GameObject:
   m_ObjectHideFlags: 0
@@ -3305,3 +3352,4 @@ SceneRoots:
   - {fileID: 1374464495}
   - {fileID: 223662719}
   - {fileID: 2120861444}
+  - {fileID: 1302724603}
