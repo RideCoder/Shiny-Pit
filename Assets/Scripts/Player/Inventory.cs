@@ -9,6 +9,7 @@ public class Inventory : MonoBehaviour
     public Dictionary<ItemSO,int> inventory = new Dictionary<ItemSO,int>();
 
     public event Action OnInventoryChanged;
+    public event Action<ItemSO> OnItemAddedToInventory;
     public ItemSO startItem;
 
     void Start()
@@ -34,6 +35,7 @@ public class Inventory : MonoBehaviour
         }
 
         OnInventoryChanged?.Invoke();
+        OnItemAddedToInventory?.Invoke(item);
     }
 
     public void RemoveItem(ItemSO item, int amount)

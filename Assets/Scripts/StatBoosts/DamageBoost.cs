@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Tilemaps;
 
-public class DamageItem : BaseItem
+public class DamageBoost : BaseStatBoost
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
