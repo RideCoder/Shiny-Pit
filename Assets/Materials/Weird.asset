@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba64b7d3b2975cf44a15c89a89548dfc, type: 3}
+  m_Name: Weird
+  m_EditorClassIdentifier: 
+  itemID: 5
+  name: Eye
+  sprite: {fileID: -3956631845772295726, guid: d72f0af207f377349b44cd3978c199d8, type: 3}
