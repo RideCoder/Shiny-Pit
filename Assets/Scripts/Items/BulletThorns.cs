@@ -15,12 +15,12 @@ public class BulletThorns : BaseItem
     {
         if (Random.Range(0f, 1f) <= 0.1f)
         {
-            GameObject proj = Instantiate(projectilePrefab, worldState.playerController.gameObject.transform.position + new Vector3(0, 10, 0), Quaternion.identity);
+            GameObject proj = Instantiate(projectilePrefab, worldState.playerController.gameObject.transform.position + new Vector3(0, .5f, 0), Quaternion.identity);
 
             Projectile projectile = proj.GetComponent<Projectile>();
             projectile.damage = 5;
             projectile.tilemapData = worldState.tilemapData;
-            projectile.Shoot(new Vector3(0, 0, 0));
+            projectile.Shoot(new Vector3(Random.Range(-4f,4f), 10, Random.Range(-4f, 4f)));
         }
     }
 }

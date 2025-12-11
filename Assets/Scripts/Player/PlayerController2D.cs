@@ -54,7 +54,7 @@ public class PlayerController2D : MonoBehaviour
         jumpPressed = false;
     }
 
-    private bool IsGrounded()
+    public bool IsGrounded()
     {
         Vector2 boxCenter = col.bounds.center;
         Vector2 boxSize = new Vector2(col.bounds.size.x, col.bounds.size.y);

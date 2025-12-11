@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
 
@@ -9,6 +10,7 @@ public class Enemy : MonoBehaviour
     public Health Health { get; private set; }
     public EnemyMovement EnemyMovement { get; private set; }
     public EnemyAI EnemyAI { get; private set; }
+    public static event Action<Vector3> OnEnemyDeath;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     private void Awake()
@@ -36,6 +38,8 @@ public class Enemy : MonoBehaviour
 
     private void Died()
     {
+
+        OnEnemyDeath?.Invoke(transform.position);
         Destroy(gameObject);
     }
 }

@@ -14,12 +14,12 @@ public class ItemGenerator : MonoBehaviour
     {
         foreach (var item in Items)
         {
-            for (int i = 0; i < 1000; ++i)
+            for (int i = 0; i < 100; ++i)
             {
                 GameObject clone = Instantiate(item);
                 clone.GetComponent<BaseStatBoost>().Tilemapdata = Tilemapdata;
                 int x = Random.Range(0, 500);
-                int y = Random.Range(400, 509);
+                int y = Random.Range(400, 490);
                 clone.transform.position = Tilemapdata.tilemap.CellToWorld(new Vector3Int(x, y, 0));
 
                 clone.transform.position += new Vector3(0.5f, 0.5f, -5f);

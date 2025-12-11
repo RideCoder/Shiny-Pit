@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3895572685369548539}
   - component: {fileID: 7227817790019561814}
   m_Layer: 7
-  m_Name: Red Projectile
+  m_Name: Toxic Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2180701618497998299, guid: 268d811b1e5ac5840b0ab66649bce792, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -6276839353294138132, guid: 84d3e0e7c0273f2488e31a7d2ad8a527, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -140,7 +140,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.67
 --- !u!50 &7227817790019561814
 Rigidbody2D:
   serializedVersion: 5
