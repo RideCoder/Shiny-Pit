@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae53a27ae5937f84fbc2e87c16684211, type: 3}
-  m_Name: Stone
+  m_Name: Bedrock
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 943808124, guid: a5fa5e1fbf74a7348ba5d66d4f16fccf, type: 3}
-  m_Color: {r: 0.4415095, g: 0.4415095, b: 0.4415095, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_Transform:
     e00: 1
     e01: 0
@@ -34,6 +34,6 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
   m_ColliderType: 1
-  maxHealth: 5
-  xp: 3
-  dropItem: {fileID: 11400000, guid: cc3a46a61ae267349a659038e19adb16, type: 2}
+  maxHealth: 150
+  xp: 7
+  dropItem: {fileID: 11400000, guid: d865ae4de48ef87438ac39a111159bd8, type: 2}

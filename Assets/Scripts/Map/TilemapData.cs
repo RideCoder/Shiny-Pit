@@ -15,8 +15,8 @@ public class TilemapData : MonoBehaviour
     public GameObject flashOverlayPrefab;
     public float flashDuration = 0.08f;
 
-    public event Action<Vector3Int> OnTileBroke;
-
+    public event Action<Tile> OnTileBroke;
+    
     // Stores health for each tile position
     private Dictionary<Vector3Int, float> tileHealth = new Dictionary<Vector3Int, float>();
 
@@ -46,7 +46,7 @@ public class TilemapData : MonoBehaviour
             tilemap.SetTile(position, null);
 
 
-            OnTileBroke?.Invoke(position);
+            OnTileBroke?.Invoke(tile);
             tileHealth.Remove(position);
         }
     }

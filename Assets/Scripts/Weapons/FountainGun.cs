@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShotGun : PlayerWeapon
+public class FountainGun : PlayerWeapon
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -16,11 +16,16 @@ public class ShotGun : PlayerWeapon
         direction.Normalize();
         spreadAngle = Random.Range(-5, 5);
         // Middle shot
-        FireProjectile(direction);
+       // FireProjectile(direction);
 
         // Spread shots using rotation
-        FireProjectile(RotateVector(direction, spreadAngle));
-        FireProjectile(RotateVector(direction, -spreadAngle));
+
+        for (int i = 0; i < 5; i++)
+        {
+            FireProjectile(RotateVector(new Vector3(0,10,0), spreadAngle));
+        }
+        
+        
 
         cooldownTimer = weaponSO.baseCooldown;
     }

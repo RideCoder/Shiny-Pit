@@ -16,12 +16,12 @@ public class BasicGun : PlayerWeapon
         bool foundHit = false;
         if (playerStats.gameObject.GetComponent<PlayerController2D>().IsGrounded())
         {
-            Debug.Log("asfasfasfTESfweafawefawefT");
+   
             // Sweep 360°
             for (int i = 0; i < rayCount; i++)
             {
                 float angle = (i * (180f / rayCount));
-                Debug.Log(angle);
+             
                 Vector2 dir = DirFromAngle(angle);
 
                 RaycastHit2D hit = Physics2D.Raycast(origin + new Vector3(0,-.5f,0), dir, rayDistance, tileLayerMask);
@@ -40,7 +40,7 @@ public class BasicGun : PlayerWeapon
         }
         else
         {
-            Debug.Log("TESfweafawefawefT");
+      
             // Sweep 360°
             for (int i = 0; i < rayCount; i++)
             {

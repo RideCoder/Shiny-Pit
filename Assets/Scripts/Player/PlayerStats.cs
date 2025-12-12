@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -23,16 +25,24 @@ public class PlayerStats : MonoBehaviour
     public float xpRequired = 5f;
     public int level = 0;
     public event Action OnPlayerStatUpdated;
+    public event Action OnPlayerLevelUp;
 
+    public Slider slider;
+   
     public WorldState worldState;
     public void Start()
     {
         worldState.tilemapData.OnTileBroke += AddXp;
+        slider.value = 0;
+        slider.minValue = 0;
+        slider.maxValue = xpRequired;
     }
 
-    public void AddXp(Vector3Int pos)
+    public void AddXp(Tile tile)
     {
-        xp++;
+        DestructibleTile destructibleTile = tile as DestructibleTile;
+        xp += destructibleTile.xp;
+        slider.value = xp;
     }
 
     public void Update()
@@ -42,6 +52,10 @@ public class PlayerStats : MonoBehaviour
         {
             xp -= xpRequired;
             level++;
+            xpRequired *= 2;
+            slider.maxValue = xpRequired;
+            slider.value = xp;
+            OnPlayerLevelUp?.Invoke();
         }
     }
 

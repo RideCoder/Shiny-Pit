@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 public class DestructibleTile : Tile
 {
     public float maxHealth = 3;
+    public float xp = 1;
     public ItemSO dropItem;
 
 

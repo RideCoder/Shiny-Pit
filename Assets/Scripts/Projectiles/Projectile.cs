@@ -70,6 +70,7 @@ public class Projectile : MonoBehaviour
 
         // Finally apply damage if there's a destructible tile there
         tilemapData.DamageTile(tilePos, damage);
+        DamageNumberManager.ShowDamage(transform.position, damage);
         Destroy(gameObject);
     }
 

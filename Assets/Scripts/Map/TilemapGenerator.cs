@@ -16,6 +16,7 @@ public class SmoothTerrainGenerator : MonoBehaviour
     public DestructibleTile dirtTile;
     public DestructibleTile stoneTile;
     public DestructibleTile oreTile;
+    public DestructibleTile bedrockTile;
     public Tilemap tilemap;
     
     private Dictionary<Vector3Int, ItemSO> tileData = new Dictionary<Vector3Int, ItemSO>();
@@ -33,15 +34,40 @@ public class SmoothTerrainGenerator : MonoBehaviour
         
        for (int i = 0; i < 10; i++)
         {
-            CreateCaves(UnityEngine.Random.Range(0,20000));
+            CreateOre(UnityEngine.Random.Range(0,20000));
         }
-            
-        
+        // CreateCaves(UnityEngine.Random.Range(0, 20000));
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 100; y < maxHeight - 60; y++)
+            {
+               
+                    tilemap.SetTile(new Vector3Int(x, y, 0), bedrockTile);
+                
+
+
+            }
+        }
 
 
     }
-
     void CreateCaves(int seed)
+    {
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 300; y < maxHeight + 4; y++)
+            {
+                float noise = Mathf.PerlinNoise(((x + (seed * 2000)) * 0.05f), (((y + (seed * 2000)) * 0.05f)));
+                if (noise > 0.5)
+                {
+                    tilemap.SetTile(new Vector3Int(x, y, 0), null);
+                }
+
+
+            }
+        }
+    }
+    void CreateOre(int seed)
     {
         for (int x = 0; x < width; x++)
         {

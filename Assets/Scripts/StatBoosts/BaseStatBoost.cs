@@ -19,9 +19,9 @@ public class BaseStatBoost : MonoBehaviour
         
     }
 
-    public void TileInDestroyed(Vector3Int position)
+    public void TileInDestroyed(Tile tile)
     {
-        if (tilePosition == position)
+        if (tilePosition == tile.transform.GetPosition())
         {
             gameObject.AddComponent<Rigidbody2D>();
         }

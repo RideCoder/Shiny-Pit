@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class BlockExplodeItem : BaseItem
 {
@@ -11,12 +12,12 @@ public class BlockExplodeItem : BaseItem
         worldState.tilemapData.OnTileBroke += ShootProjectiles;
     }
 
-    public void ShootProjectiles(Vector3Int pos)
+    public void ShootProjectiles(Tile tile)
     {
-        Debug.Log("TEST");
+        
         for (int i = 0; i < Random.Range(3, 5); i++)
         {
-            GameObject proj = Instantiate(projectilePrefab, pos + new Vector3(0, 2f, 0), Quaternion.identity);
+            GameObject proj = Instantiate(projectilePrefab, worldState.playerController.gameObject.transform.position + new Vector3(0, 2f, 0), Quaternion.identity);
 
             Projectile projectile = proj.GetComponent<Projectile>();
             projectile.damage = 2;

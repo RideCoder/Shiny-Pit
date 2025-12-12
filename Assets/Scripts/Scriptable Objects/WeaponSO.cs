@@ -5,5 +5,6 @@ public class WeaponSO : ItemSO
 {
     public float baseCooldown;
     public float baseDamage;
+    
     public GameObject weapon;
 }
