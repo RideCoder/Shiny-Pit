@@ -75,11 +75,12 @@ public class BasicGun : PlayerWeapon
         GameObject proj = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
 
         Projectile projectile = proj.GetComponent<Projectile>();
-        projectile.damage = playerStats.damageMultiplier * weaponSO.baseDamage;
+        projectile.damage = playerStats.damageMultiplier * baseDamage;
+        
         projectile.tilemapData = tilemapData;
         projectile.Shoot(direction);
 
-        cooldownTimer = weaponSO.baseCooldown;
+        cooldownTimer = baseCooldown;
     }
 
     private Vector2 DirFromAngle(float angle)

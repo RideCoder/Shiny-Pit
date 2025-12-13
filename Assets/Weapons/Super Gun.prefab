@@ -44,11 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28fbc84253882ff4b98d8f348c4d2213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.3
-  reloadTime: 0.01
   firePoint: {fileID: 0}
   tilemapData: {fileID: 0}
-  sprite: {fileID: 0}
   weaponSO: {fileID: 0}
+  playerStats: {fileID: 0}
+  baseCooldown: 1
+  baseDamage: 1
   projectilePrefab: {fileID: 6387833315367779100, guid: d0e2191d38e677442a73db0ebb8878af, type: 3}
   spreadAngle: 15

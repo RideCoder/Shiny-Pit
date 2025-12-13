@@ -15,6 +15,4 @@ MonoBehaviour:
   itemID: 4
   name: Basic Gun
   sprite: {fileID: 7145198348311737387, guid: 2fd0481203355f34eab9bb8f69e58cba, type: 3}
-  baseCooldown: 0.333
-  baseDamage: 1
   weapon: {fileID: 5811476182153471183, guid: 36daeaa9c8a76194296d7c0a5eab6b2f, type: 3}

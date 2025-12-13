@@ -52,7 +52,7 @@ public class PlayerStats : MonoBehaviour
         {
             xp -= xpRequired;
             level++;
-            xpRequired *= 2;
+            xpRequired += 1;
             slider.maxValue = xpRequired;
             slider.value = xp;
             OnPlayerLevelUp?.Invoke();

@@ -7,7 +7,7 @@ public class Projectile : MonoBehaviour
 
     public TilemapData tilemapData;
     public float speed = 20f;
-    public float damage = 1f;
+    public float damage;
     private Vector3 direction;
     private Rigidbody2D rb;
     void Start()
@@ -69,6 +69,7 @@ public class Projectile : MonoBehaviour
         }
 
         // Finally apply damage if there's a destructible tile there
+        Debug.Log(damage);
         tilemapData.DamageTile(tilePos, damage);
         DamageNumberManager.ShowDamage(transform.position, damage);
         Destroy(gameObject);

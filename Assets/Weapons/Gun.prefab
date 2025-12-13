@@ -48,9 +48,11 @@ MonoBehaviour:
   tilemapData: {fileID: 0}
   weaponSO: {fileID: 0}
   playerStats: {fileID: 0}
+  baseCooldown: 0.2
+  baseDamage: 1
   projectilePrefab: {fileID: 6387833315367779100, guid: 0dcd7ca94d5e6964ea54846f842f609c, type: 3}
   tileLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  rayCount: 32
+  rayCount: 64
   rayDistance: 15

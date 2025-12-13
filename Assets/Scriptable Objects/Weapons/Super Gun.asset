@@ -15,6 +15,4 @@ MonoBehaviour:
   itemID: 5
   name: Super Gun
   sprite: {fileID: -4700396809364955791, guid: 65e78771d20f2c74da473a2f83a5dd42, type: 3}
-  baseCooldown: 1
-  baseDamage: 5
   weapon: {fileID: 5811476182153471183, guid: bee7c2eac8447194dbaf7569039915b0, type: 3}

@@ -14,7 +14,7 @@ public class FountainGun : PlayerWeapon
         Vector3 direction = mouseWorld - firePoint.position;
         direction.z = 0f;
         direction.Normalize();
-        spreadAngle = Random.Range(-5, 5);
+      
         // Middle shot
        // FireProjectile(direction);
 
@@ -22,12 +22,12 @@ public class FountainGun : PlayerWeapon
 
         for (int i = 0; i < 5; i++)
         {
-            FireProjectile(RotateVector(new Vector3(0,10,0), spreadAngle));
+            FireProjectile(RotateVector(new Vector3(0,10,0), Random.Range(-spreadAngle,spreadAngle)));
         }
         
         
 
-        cooldownTimer = weaponSO.baseCooldown;
+        cooldownTimer = baseCooldown;
     }
 
     private void FireProjectile(Vector3 direction)
@@ -35,7 +35,7 @@ public class FountainGun : PlayerWeapon
         GameObject proj = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
 
         Projectile projectile = proj.GetComponent<Projectile>();
-        projectile.damage = playerStats.damageMultiplier * weaponSO.baseDamage;
+        projectile.damage = playerStats.damageMultiplier * baseDamage;
         projectile.tilemapData = tilemapData;
         
         projectile.Shoot(direction);

@@ -8,7 +8,9 @@ public class PlayerWeapon : MonoBehaviour
     public TilemapData tilemapData;
     public WeaponSO weaponSO;
     public PlayerStats playerStats;
-   
+    public float baseCooldown;
+    public float baseDamage;
+
     protected float cooldownTimer;
     private void Start()
     {
@@ -27,13 +29,13 @@ public class PlayerWeapon : MonoBehaviour
 
     protected virtual float GetEffectiveCooldown()
     {
-        float baseCooldown = weaponSO.baseCooldown;
+        float baseCooldownTemp = baseCooldown;
 
-        return baseCooldown;
+        return baseCooldownTemp;
     }
     protected float GetEffectiveDamage()
     {
-        return weaponSO.baseDamage * playerStats.damageMultiplier;
+        return baseDamage * playerStats.damageMultiplier;
     }
 
     // Base Fire method – override for custom weapon behavior
