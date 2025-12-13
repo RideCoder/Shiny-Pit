@@ -648,8 +648,9 @@ MonoBehaviour:
   smoothingPasses: 3
   dirtTile: {fileID: 11400000, guid: 6cf800826ed88444cb7c3e507f58fe66, type: 2}
   stoneTile: {fileID: 11400000, guid: 9e58af6267fe1854c93f32b7f518ccca, type: 2}
-  oreTile: {fileID: 11400000, guid: ea102c7699f2e984ca74b43a24ac23cb, type: 2}
+  copperTile: {fileID: 11400000, guid: ea102c7699f2e984ca74b43a24ac23cb, type: 2}
   bedrockTile: {fileID: 11400000, guid: f2072ebbef06db643bfbfa4508f20ca2, type: 2}
+  ironTile: {fileID: 11400000, guid: 6b1225d4af757da4d93cf351ce7a1169, type: 2}
   tilemap: {fileID: 134680383}
   seed: 2
 --- !u!4 &215417560
@@ -714,9 +715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tilemapdata: {fileID: 215417561}
   Items:
-  - {fileID: 2704497843058482735, guid: 8da80d3cd14c80849885c3f686303a4f, type: 3}
   - {fileID: 2704497843058482735, guid: adfde4b5115af074e894a2a0937a3f4a, type: 3}
-  - {fileID: 2704497843058482735, guid: 9c79cd74b0ab1ca4590f27ad24c2dc4c, type: 3}
 --- !u!4 &223662719
 Transform:
   m_ObjectHideFlags: 0
@@ -2994,7 +2993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 523fbe594f2544641be2a8280206d6e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startItem: {fileID: 11400000, guid: 41e35644f2510564f810e1c64deadec7, type: 2}
+  startItem: {fileID: 11400000, guid: 2281730d5e9e1284c98eaa4f9a5dbbcb, type: 2}
 --- !u!114 &1587355165
 MonoBehaviour:
   m_ObjectHideFlags: 0

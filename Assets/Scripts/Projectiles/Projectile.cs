@@ -54,7 +54,7 @@ public class Projectile : MonoBehaviour
         // Move the sample point *into* the tile by a small epsilon.
         // Use a fraction of the tile cell size; this scales properly for non-1-sized cells.
         Vector3 cellSize = tilemap.cellSize;
-        float epsilon = Mathf.Min(cellSize.x, cellSize.y) * 0.25f; // 10% of a cell -- tune smaller if needed
+        float epsilon = Mathf.Min(cellSize.x, cellSize.y) * 0.5f; // 10% of a cell -- tune smaller if needed
 
         Vector2 samplePoint = hitWorld2D - normal * epsilon;
         Vector3Int tilePos = tilemap.WorldToCell((Vector3)samplePoint);
@@ -63,7 +63,7 @@ public class Projectile : MonoBehaviour
         if (tilemap.GetTile(tilePos) == null)
         {
             // Try smaller epsilon
-            float smallEps = Mathf.Min(cellSize.x, cellSize.y) * 0.2f;
+            float smallEps = Mathf.Min(cellSize.x, cellSize.y) * 0.5f;
             samplePoint = hitWorld2D - normal * smallEps;
             tilePos = tilemap.WorldToCell((Vector3)samplePoint);
         }

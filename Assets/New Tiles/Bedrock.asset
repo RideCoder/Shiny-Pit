@@ -35,5 +35,5 @@ MonoBehaviour:
   m_Flags: 1
   m_ColliderType: 1
   maxHealth: 1500
-  xp: 7
+  xp: 1
   dropItem: {fileID: 11400000, guid: d865ae4de48ef87438ac39a111159bd8, type: 2}

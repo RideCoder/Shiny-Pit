@@ -34,6 +34,6 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
   m_ColliderType: 1
-  maxHealth: 100
-  xp: 3
+  maxHealth: 25
+  xp: 1
   dropItem: {fileID: 11400000, guid: cc3a46a61ae267349a659038e19adb16, type: 2}

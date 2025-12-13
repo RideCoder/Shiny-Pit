@@ -20,7 +20,7 @@ public class PlayerUpgradeButton : MonoBehaviour
 
     public WeaponUpgrade upgradeChosen;
     public event Action OnClicked;
-
+    public float amountChosen;
 
     private void Start()
     {
@@ -34,6 +34,7 @@ public class PlayerUpgradeButton : MonoBehaviour
         if (inventory.inventory.ContainsKey(weaponSO))
         {
             upgradeChosen = weaponSO.weapon.GetComponent<PlayerWeapon>().upgrades[UnityEngine.Random.Range(0, weaponSO.weapon.GetComponent<PlayerWeapon>().upgrades.Count)];
+            amountChosen = UnityEngine.Random.Range(7, 22);
             UpdateText();
            
 
@@ -48,7 +49,7 @@ public class PlayerUpgradeButton : MonoBehaviour
 
     private void UpdateText()
     {
-        text.text = weaponSO.name + " " + upgradeChosen.name;
+        text.text = weaponSO.name + " " + upgradeChosen.name + " " + amountChosen + "%";
        
     }
 
@@ -61,7 +62,7 @@ public class PlayerUpgradeButton : MonoBehaviour
             foreach (var weapon in weaponInventoryManager.weapons
                      .Where(w => w != null && w.weaponSO == weaponSO))
             {
-                upgradeChosen.Apply(weapon, 1.1f);
+                upgradeChosen.Apply(weapon, 1f + (amountChosen/100f));
             }
             
             

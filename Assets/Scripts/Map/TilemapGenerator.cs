@@ -15,8 +15,9 @@ public class SmoothTerrainGenerator : MonoBehaviour
 
     public DestructibleTile dirtTile;
     public DestructibleTile stoneTile;
-    public DestructibleTile oreTile;
+    public DestructibleTile copperTile;
     public DestructibleTile bedrockTile;
+    public DestructibleTile ironTile;
     public Tilemap tilemap;
     
     private Dictionary<Vector3Int, ItemSO> tileData = new Dictionary<Vector3Int, ItemSO>();
@@ -31,23 +32,23 @@ public class SmoothTerrainGenerator : MonoBehaviour
         SmoothHeights();
 
         RenderTerrain();
-        
-       for (int i = 0; i < 10; i++)
-        {
-            CreateOre(UnityEngine.Random.Range(0,20000));
-        }
-        // CreateCaves(UnityEngine.Random.Range(0, 20000));
         for (int x = 0; x < width; x++)
         {
             for (int y = 100; y < maxHeight - 60; y++)
             {
-               
-                    tilemap.SetTile(new Vector3Int(x, y, 0), bedrockTile);
-                
+
+                tilemap.SetTile(new Vector3Int(x, y, 0), bedrockTile);
+
 
 
             }
         }
+        for (int i = 0; i < 10; i++)
+        {
+            CreateOre(UnityEngine.Random.Range(0,20000));
+        }
+        // CreateCaves(UnityEngine.Random.Range(0, 20000));
+      
 
 
     }
@@ -71,12 +72,26 @@ public class SmoothTerrainGenerator : MonoBehaviour
     {
         for (int x = 0; x < width; x++)
         {
-            for (int y = 300; y < maxHeight+4; y++)
+            for (int y = 450; y < maxHeight+4; y++)
             {
                 float noise = Mathf.PerlinNoise(((x + (seed * 2000)) * 0.05f), (((y + (seed * 2000)) * 0.05f)));
                  if (noise > 0.75)
                 {
-                    tilemap.SetTile(new Vector3Int(x, y, 0), oreTile);
+                    tilemap.SetTile(new Vector3Int(x, y, 0), copperTile);
+                }
+
+
+            }
+        }
+
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 400; y < 450; y++)
+            {
+                float noise = Mathf.PerlinNoise(((x + (seed * 2000)) * 0.05f), (((y + (seed * 2000)) * 0.05f)));
+                if (noise > 0.75)
+                {
+                    tilemap.SetTile(new Vector3Int(x, y, 0), ironTile);
                 }
 
 

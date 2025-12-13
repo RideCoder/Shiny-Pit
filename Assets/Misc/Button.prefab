@@ -146,12 +146,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25f40bf6f2942a74abd0571e3d1babe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons:
-  - {fileID: 11400000, guid: 41e35644f2510564f810e1c64deadec7, type: 2}
-  - {fileID: 11400000, guid: 2281730d5e9e1284c98eaa4f9a5dbbcb, type: 2}
   inventory: {fileID: 0}
-  weapon: {fileID: 0}
+  weaponInventoryManager: {fileID: 0}
   text: {fileID: 5609556261540810713}
+  weapons:
+  - {fileID: 11400000, guid: 2281730d5e9e1284c98eaa4f9a5dbbcb, type: 2}
+  weaponSO: {fileID: 0}
+  upgradeChosen: {fileID: 0}
+  amountChosen: 0
 --- !u!1 &1528742297321412788
 GameObject:
   m_ObjectHideFlags: 0
