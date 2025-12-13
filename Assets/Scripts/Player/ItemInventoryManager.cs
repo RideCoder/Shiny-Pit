@@ -11,7 +11,7 @@ public class ItemInventoryManager : MonoBehaviour
     }
     public void ItemAdded(ItemSO item)
     {
-        Debug.Log("ITEM ADDED");
+      
             if (item is SpecialItemSO specialItem)
             {
                 specialItem.specialItem.GetComponent<BaseItem>().AddToPlayer(worldState);

@@ -74,7 +74,7 @@ public class SmoothTerrainGenerator : MonoBehaviour
             for (int y = 300; y < maxHeight+4; y++)
             {
                 float noise = Mathf.PerlinNoise(((x + (seed * 2000)) * 0.05f), (((y + (seed * 2000)) * 0.05f)));
-                 if (noise > 0.8)
+                 if (noise > 0.75)
                 {
                     tilemap.SetTile(new Vector3Int(x, y, 0), oreTile);
                 }

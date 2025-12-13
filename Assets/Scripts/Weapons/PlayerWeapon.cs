@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class PlayerWeapon : MonoBehaviour
     public PlayerStats playerStats;
     public float baseCooldown;
     public float baseDamage;
+    public List<WeaponUpgrade> upgrades;
 
     protected float cooldownTimer;
     private void Start()

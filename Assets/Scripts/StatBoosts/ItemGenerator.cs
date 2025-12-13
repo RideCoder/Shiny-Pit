@@ -19,7 +19,7 @@ public class ItemGenerator : MonoBehaviour
                 GameObject clone = Instantiate(item);
                 clone.GetComponent<BaseStatBoost>().Tilemapdata = Tilemapdata;
                 int x = Random.Range(0, 500);
-                int y = Random.Range(400, 490);
+                int y = Random.Range(400, 510);
                 clone.transform.position = Tilemapdata.tilemap.CellToWorld(new Vector3Int(x, y, 0));
 
                 clone.transform.position += new Vector3(0.5f, 0.5f, -5f);

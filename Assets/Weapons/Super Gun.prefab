@@ -49,6 +49,9 @@ MonoBehaviour:
   weaponSO: {fileID: 0}
   playerStats: {fileID: 0}
   baseCooldown: 1
-  baseDamage: 1
+  baseDamage: 8
+  upgrades:
+  - {fileID: 11400000, guid: 9f0daed3e4ab53841bff6a02c01ad1a2, type: 2}
+  - {fileID: 11400000, guid: 91094f93c5422704393dd5093f0a799e, type: 2}
   projectilePrefab: {fileID: 6387833315367779100, guid: d0e2191d38e677442a73db0ebb8878af, type: 3}
   spreadAngle: 15

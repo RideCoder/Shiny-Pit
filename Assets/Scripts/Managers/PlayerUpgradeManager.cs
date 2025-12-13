@@ -16,14 +16,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     void Start()
     {
         playerStats.OnPlayerLevelUp += PlayerLeveledUp;
-     /*   for (int i = 0; i < 3; i++)
-        {
-            GameObject clone = Instantiate(button);
-            clone.GetComponent<PlayerUpgradeButton>().inventory = inventory;
-            clone.GetComponent<PlayerUpgradeButton>().OnClicked += ButtonClicked;
-            clone.transform.parent = container.transform;
-            UpgradeButtons.Add(clone);
-        }*/
+    
        
     }
 

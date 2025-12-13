@@ -12,7 +12,7 @@ public class DamageNumber : MonoBehaviour
 
     public void SetValue(float amount)
     {
-        text.text = amount.ToString();
+        text.text = Mathf.RoundToInt(amount).ToString();
     }
 
     private void Update()
