@@ -8,7 +8,7 @@ public class CraftingPowerup : MonoBehaviour
     public TilemapData Tilemapdata;
     private Vector3Int tilePosition;
     public GameObject craftingView;
-    public Recipe recipeReference;
+    public RecipeView recipeReference;
 
     public void Start()
     {

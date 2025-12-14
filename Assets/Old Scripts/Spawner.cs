@@ -45,7 +45,7 @@ public class Spawner : MonoBehaviour
             {
                 GameObject clone = Instantiate(enemy);
                 clone.GetComponent<EnemyAI>().Initialize(player, tilemapData);
-                clone.GetComponent<Health>().maxHealth = (3f * playerStats.fireRateMultiplier * playerStats.damageMultiplier);
+               // clone.GetComponent<Health>().maxHealth = (3f * playerStats.fireRateMultiplier * playerStats.damageMultiplier);
 
 
                 clone.transform.position = spawnPosition;

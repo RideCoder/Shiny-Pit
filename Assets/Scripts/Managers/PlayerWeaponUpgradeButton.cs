@@ -4,7 +4,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 
-public class PlayerUpgradeButton : MonoBehaviour
+public class PlayerWeaponUpgradeButton : MonoBehaviour
 {
    
     [Header("References")]

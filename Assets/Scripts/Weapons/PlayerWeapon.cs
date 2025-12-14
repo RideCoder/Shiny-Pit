@@ -37,7 +37,7 @@ public class PlayerWeapon : MonoBehaviour
     }
     protected float GetEffectiveDamage()
     {
-        return baseDamage * playerStats.damageMultiplier;
+        return baseDamage * playerStats.GetStat(StatType.DamageMultiplier);
     }
 
     // Base Fire method – override for custom weapon behavior

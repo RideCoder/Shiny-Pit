@@ -13,7 +13,7 @@ public class DamageBoost : BaseStatBoost
         {
             // Now you have weaponsManager as an "out parameter"
             // Use it directly here
-            playerStats.damageMultiplier *= 1.1f;
+            playerStats.ModifyStatMultiplicative(StatType.DamageMultiplier, 1.1f);
             Destroy(gameObject);
         }
     }

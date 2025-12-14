@@ -5,58 +5,137 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
+public enum StatType
+{
+    FireRateMultiplier,
+    DamageMultiplier,
+    MovementMultiplier,
+    Health,
+    HealthRegen,
+    ExtraJumps,
+    JumpHeight,
+    TileDamageMultiplier,
+    XpMultiplier,
+    Xp,
+    XpRequired,
+    CritChance,
+    CritMultiplier
+}
 
+
+[Serializable]
+public class Stat
+{
+    public StatType type;
+    public float baseValue;
+}
 public class PlayerStats : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
 
-  
-    public float fireRateMultiplier = 1f;
-    public float damageMultiplier = 1f;
-    public float movementMultipler = 1f;
-    public float health = 100f;
-    public float healthRegen = 1f;
-    public float extraJumps = 0f;
-    public float jumpHeight = 19f;
-    public float tileDamageMultiplier = 1f;
-    public float xpMultiplier = 1f;
-    public float xp = 0f;
-    public float xpRequired = 5f;
+    [Header("Base Data")]
+    public PlayerStatsData baseStatsData;
+
+    [Header("Runtime Stats")]
+    private Dictionary<StatType, float> runtimeStats = new();
+    /* public float fireRateMultiplier = 1f;
+     public float damageMultiplier = 1f;
+     public float movementMultipler = 1f;
+     public float health = 100f;
+     public float healthRegen = 1f;
+     public float extraJumps = 0f;
+     public float jumpHeight = 19f;
+     public float tileDamageMultiplier = 1f;
+     public float xpMultiplier = 1f;
+     public float xp = 0f;
+     public float xpRequired = 5f;
+     public float critChance = 0.1f;
+     public float critMultiplier = 2f;*/
     public int level = 0;
+
     public event Action OnPlayerStatUpdated;
     public event Action OnPlayerLevelUp;
 
     public Slider slider;
    
     public WorldState worldState;
+
+    private void Awake()
+    {
+        InitializeStats();
+    }
+
+    private void InitializeStats()
+    {
+        runtimeStats.Clear();
+
+        foreach (var stat in baseStatsData.baseStats)
+        {
+            runtimeStats[stat.type] = stat.baseValue;
+        }
+    }
     public void Start()
     {
         worldState.tilemapData.OnTileBroke += AddXp;
-        slider.value = 0;
+
         slider.minValue = 0;
-        slider.maxValue = xpRequired;
+        slider.value = 0;
+        slider.maxValue = GetStat(StatType.XpRequired);
     }
 
     public void AddXp(Tile tile)
     {
-        DestructibleTile destructibleTile = tile as DestructibleTile;
-        xp += destructibleTile.xp;
-        slider.value = xp;
+        if (tile is not DestructibleTile destructibleTile)
+            return;
+
+        ModifyStatAdditive(StatType.Xp, destructibleTile.xp);
+        slider.value = GetStat(StatType.Xp);
     }
+
 
     public void Update()
     {
-      
-        if (xp >= xpRequired)
-        {
-            xp -= xpRequired;
-            level++;
-            xpRequired += 10;
-            slider.maxValue = xpRequired;
-            slider.value = xp;
-            OnPlayerLevelUp?.Invoke();
-        }
+        float xp = GetStat(StatType.Xp);
+        float xpRequired = GetStat(StatType.XpRequired);
+
+        if (xp < xpRequired)
+            return;
+
+        xp -= xpRequired;
+        level++;
+
+        SetStat(StatType.Xp, xp);
+        ModifyStatAdditive(StatType.XpRequired, 10f);
+
+        slider.maxValue = GetStat(StatType.XpRequired);
+        slider.value = xp;
+
+        OnPlayerLevelUp?.Invoke();
+    }
+
+
+    public float GetStat(StatType type)
+    {
+        return runtimeStats.TryGetValue(type, out var value) ? value : 0f;
+    }
+
+    public void SetStat(StatType type, float value)
+    {
+        runtimeStats[type] = value;
+        OnPlayerStatUpdated?.Invoke();
+    }
+
+    public void ModifyStatMultiplicative(StatType type, float delta)
+    {
+        runtimeStats[type] *= delta;
+        OnPlayerStatUpdated?.Invoke();
+    }
+
+    public void ModifyStatAdditive(StatType type, float delta)
+    {
+        runtimeStats[type] += delta;
+        OnPlayerStatUpdated?.Invoke();
     }
 
 

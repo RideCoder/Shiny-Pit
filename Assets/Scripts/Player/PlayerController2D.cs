@@ -29,7 +29,7 @@ public class PlayerController2D : MonoBehaviour
    
     private void Update()
     {
-        modifiedMoveSpeed = moveSpeed * playerStats.movementMultipler;
+        modifiedMoveSpeed = moveSpeed * playerStats.GetStat(StatType.FireRateMultiplier);
         // Get input
         moveInput = Input.GetAxisRaw("Horizontal");
 

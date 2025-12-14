@@ -100,7 +100,7 @@ public class WeaponInventoryManager : MonoBehaviour
             {
 
                 
-                weapon.Tick(Time.deltaTime*stats.fireRateMultiplier);
+                weapon.Tick(Time.deltaTime*stats.GetStat(StatType.FireRateMultiplier));
            
             }
            

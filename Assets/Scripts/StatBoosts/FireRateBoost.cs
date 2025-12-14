@@ -13,7 +13,7 @@ public class FireRateBoost : BaseStatBoost
         {
             // Now you have weaponsManager as an "out parameter"
             // Use it directly here
-            playerStats.fireRateMultiplier *= 1.1f;
+            playerStats.ModifyStatMultiplicative(StatType.FireRateMultiplier, 1.1f);
             Destroy(gameObject);
         }
     }

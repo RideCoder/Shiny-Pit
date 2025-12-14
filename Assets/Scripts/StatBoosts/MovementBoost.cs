@@ -13,7 +13,7 @@ public class MovementBoost : BaseStatBoost
         {
             // Now you have weaponsManager as an "out parameter"
             // Use it directly here
-            playerStats.movementMultipler *= 1.1f;
+            playerStats.ModifyStatMultiplicative(StatType.MovementMultiplier, 1.1f);
             Destroy(gameObject);
         }
     }

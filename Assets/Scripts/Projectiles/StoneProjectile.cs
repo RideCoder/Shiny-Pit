@@ -73,7 +73,7 @@ public class StoneProjectile : Projectile
             GameObject proj = Instantiate(splitProjectile, gameObject.transform.position + new Vector3(0, 2f, 0), Quaternion.identity);
 
             Projectile projectile = proj.GetComponent<Projectile>();
-            projectile.damage = 5;
+            projectile.damage = damage;
             projectile.tilemapData = tilemapData;
             projectile.Shoot(new Vector3(Random.Range(-5f, 5f), 10, Random.Range(-5f, 5f)));
         }

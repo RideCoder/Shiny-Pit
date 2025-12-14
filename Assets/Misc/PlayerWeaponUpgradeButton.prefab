@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 190892076917115509}
   - component: {fileID: 2888879829537026076}
   m_Layer: 5
-  m_Name: Button
+  m_Name: PlayerWeaponUpgradeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

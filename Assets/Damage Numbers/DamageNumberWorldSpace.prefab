@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7477017493670107813, guid: 934b13f3b33d69449bb36f192c0ddaf5, type: 2}
+  - {fileID: 8495118281978396957, guid: fdcaf3d913d1d7948b2c1a03d64fd08d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdcaf3d913d1d7948b2c1a03d64fd08d, type: 2}
-  m_sharedMaterial: {fileID: 7477017493670107813, guid: 934b13f3b33d69449bb36f192c0ddaf5, type: 2}
+  m_sharedMaterial: {fileID: 8495118281978396957, guid: fdcaf3d913d1d7948b2c1a03d64fd08d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7301470947646711439}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecc1be13c7a570f45a811241a1826838, type: 3}
+  m_Script: {fileID: 11500000, guid: 01254281fba87db499a70727c691cfb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 1

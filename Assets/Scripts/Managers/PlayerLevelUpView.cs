@@ -4,7 +4,7 @@ using TMPro;
 using UnityEditor.Rendering;
 using UnityEngine;
 
-public class PlayerUpgradeManager : MonoBehaviour
+public class PlayerLevelUpView : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -24,7 +24,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     {
         foreach (GameObject button in UpgradeButtons)
         {
-            button.GetComponent<PlayerUpgradeButton>().OnClicked -= ButtonClicked;
+            button.GetComponent<PlayerWeaponUpgradeButton>().OnClicked -= ButtonClicked;
             Destroy(button.gameObject);
         }
         UpgradeButtons.Clear();
@@ -37,8 +37,8 @@ public class PlayerUpgradeManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             GameObject clone = Instantiate(button);
-            clone.GetComponent<PlayerUpgradeButton>().inventory = inventory;
-            clone.GetComponent<PlayerUpgradeButton>().OnClicked += ButtonClicked;
+            clone.GetComponent<PlayerWeaponUpgradeButton>().inventory = inventory;
+            clone.GetComponent<PlayerWeaponUpgradeButton>().OnClicked += ButtonClicked;
             clone.transform.parent = container.transform;
             UpgradeButtons.Add(clone);
         }

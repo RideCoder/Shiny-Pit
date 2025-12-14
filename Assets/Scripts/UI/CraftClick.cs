@@ -7,7 +7,7 @@ public class CraftClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public CraftingRecipeSO CraftingRecipeSO;
-    public Recipe recipe;
+    public RecipeView recipe;
     public GameObject recipeView;
     public GameObject itemView;
    

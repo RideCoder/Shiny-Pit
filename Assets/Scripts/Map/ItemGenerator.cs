@@ -11,7 +11,7 @@ public class ItemGenerator : MonoBehaviour
     private Vector3Int tilePosition;
     public List<GameObject> items;
     public GameObject craftingPowerup;
-    public Recipe recipeReference;
+    public RecipeView recipeReference;
     public void Start()
     {
         foreach (var item in items)
