@@ -716,7 +716,7 @@ MonoBehaviour:
   Tilemapdata: {fileID: 215417561}
   craftingView: {fileID: 84910408}
   items:
-  - {fileID: 2704497843058482735, guid: adfde4b5115af074e894a2a0937a3f4a, type: 3}
+  - {fileID: 2704497843058482735, guid: c4c8e8c62109bdd40aa87744605dc65a, type: 3}
   craftingPowerup: {fileID: 2704497843058482735, guid: 347214fd98f8fb747a635060c9fda85b, type: 3}
   recipeReference: {fileID: 974063988}
 --- !u!4 &223662719
@@ -2717,6 +2717,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageNumberPrefab: {fileID: 7301470947646711439, guid: 2eefee0d513a4c74a91629f76f86319b, type: 3}
+  damageNumberCritPrefab: {fileID: 7301470947646711439, guid: 1e1f8973f17087e40be0c1d17c13c605, type: 3}
+  playerStats: {fileID: 0}
 --- !u!4 &1374464495
 Transform:
   m_ObjectHideFlags: 0
@@ -3200,7 +3202,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
-  jumpForce: 19
   groundLayer:
     serializedVersion: 2
     m_Bits: 64

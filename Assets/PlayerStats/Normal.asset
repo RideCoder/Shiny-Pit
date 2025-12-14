@@ -35,5 +35,7 @@ MonoBehaviour:
     baseValue: 5
   - type: 11
     baseValue: 0.1
-  - type: 11
-    baseValue: 0.1
+  - type: 12
+    baseValue: 2
+  - type: 6
+    baseValue: 19

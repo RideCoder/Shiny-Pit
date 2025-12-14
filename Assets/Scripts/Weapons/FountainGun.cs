@@ -37,7 +37,8 @@ public class FountainGun : PlayerWeapon
         Projectile projectile = proj.GetComponent<Projectile>();
         projectile.damage = playerStats.GetStat(StatType.DamageMultiplier) * baseDamage;
         projectile.tilemapData = tilemapData;
-        
+        projectile.critChance = playerStats.GetStat(StatType.CritChance);
+        projectile.critDamage = playerStats.GetStat(StatType.CritMultiplier);
         projectile.Shoot(direction);
     }
 

@@ -31,6 +31,7 @@ public class StoneProjectile : Projectile
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        
         IDamageble damageble = collision.collider.GetComponent<IDamageble>();
 
         if (damageble != null)

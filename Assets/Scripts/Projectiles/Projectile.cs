@@ -8,6 +8,8 @@ public class Projectile : MonoBehaviour
     public TilemapData tilemapData;
     public float speed = 20f;
     public float damage;
+    public float critChance = 0f;
+    public float critDamage = 2f;
     public Vector3 direction;
     public Rigidbody2D rb;
     public void Start()
@@ -36,7 +38,12 @@ public class Projectile : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         IDamageble damageble = collision.collider.GetComponent<IDamageble>();
-        
+        bool crit = false;
+
+        if (Random.Range(0f,1f) <= critChance)
+        {
+            crit = true;
+        }
         if (damageble != null)
         {
             
@@ -69,10 +76,18 @@ public class Projectile : MonoBehaviour
         }
 
         // Finally apply damage if there's a destructible tile there
-        
-        tilemapData.DamageTile(tilePos, damage);
-        DamageNumberManager.ShowDamage(transform.position, damage);
-        Destroy(gameObject);
+        if (crit)
+        {
+            tilemapData.DamageTile(tilePos, damage*critDamage);
+            DamageNumberManager.ShowDamageCrit(transform.position, damage * critDamage);
+        }
+        else
+        {
+            tilemapData.DamageTile(tilePos, damage);
+            DamageNumberManager.ShowDamage(transform.position, damage);
+        }
+
+            Destroy(gameObject);
     }
 
 

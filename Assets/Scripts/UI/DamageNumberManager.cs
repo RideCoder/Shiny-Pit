@@ -6,7 +6,8 @@ public class DamageNumberManager : MonoBehaviour
 
     [Header("Damage Number Settings")]
     public GameObject damageNumberPrefab; // prefab with text, animation, etc.
-
+    public GameObject damageNumberCritPrefab; // prefab with text, animation, etc.
+    public PlayerStats playerStats;
     private void Awake()
     {
         if (instance == null)
@@ -27,5 +28,15 @@ public class DamageNumberManager : MonoBehaviour
         DamageNumber number = go.GetComponent<DamageNumber>();
         if (number != null)
             number.SetValue(amount);
+    }
+
+    public static void ShowDamageCrit(Vector3 position, float amount)
+    {
+        if (instance == null || instance.damageNumberCritPrefab == null) return;
+
+        GameObject go = Instantiate(instance.damageNumberCritPrefab, position, Quaternion.identity);
+        DamageNumber number = go.GetComponent<DamageNumber>();
+        if (number != null)
+            number.SetValue(amount, " Crit");
     }
 }

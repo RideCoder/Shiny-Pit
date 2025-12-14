@@ -76,7 +76,8 @@ public class BasicGun : PlayerWeapon
 
         Projectile projectile = proj.GetComponent<Projectile>();
         projectile.damage = playerStats.GetStat(StatType.DamageMultiplier) * baseDamage;
-        
+        projectile.critChance = playerStats.GetStat(StatType.CritChance);
+        projectile.critDamage = playerStats.GetStat(StatType.CritMultiplier);
         projectile.tilemapData = tilemapData;
         projectile.Shoot(direction);
 

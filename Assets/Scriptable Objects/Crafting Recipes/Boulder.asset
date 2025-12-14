@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f64e97c0a656eac4cab832d203efd106, type: 3}
-  m_Name: Toxic Craft
+  m_Name: Boulder
   m_EditorClassIdentifier: 
   craftingRecipeID: 1
   ingredients:
   - item: {fileID: 11400000, guid: cc3a46a61ae267349a659038e19adb16, type: 2}
-    quantity: 3
+    quantity: 50
   resultItem: {fileID: 11400000, guid: 0ef3a45d83c61834b8dd514b5c6a6cee, type: 2}

@@ -10,9 +10,9 @@ public class DamageNumber : MonoBehaviour
 
     private float timer = 0f;
 
-    public void SetValue(float amount)
+    public void SetValue(float amount, string suffix = " ")
     {
-        text.text = Mathf.RoundToInt(amount).ToString();
+        text.text = Mathf.RoundToInt(amount).ToString() + suffix;
     }
 
     private void Update()

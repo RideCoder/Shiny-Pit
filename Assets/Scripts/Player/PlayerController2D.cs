@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerController2D : MonoBehaviour
 {
     public float moveSpeed = 6f;
-    public float jumpForce = 14f;
+   
     public LayerMask groundLayer;
     public float groundCheckDistance = 0.1f;
     public PlayerStats playerStats;
@@ -29,7 +29,8 @@ public class PlayerController2D : MonoBehaviour
    
     private void Update()
     {
-        modifiedMoveSpeed = moveSpeed * playerStats.GetStat(StatType.FireRateMultiplier);
+        modifiedMoveSpeed = moveSpeed * playerStats.GetStat(StatType.MovementMultiplier);
+       
         // Get input
         moveInput = Input.GetAxisRaw("Horizontal");
 
@@ -60,7 +61,7 @@ public class PlayerController2D : MonoBehaviour
 
         if (jumpPressed && grounded)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, playerStats.GetStat(StatType.JumpHeight));
         }
 
         if (Mathf.Abs(rb.linearVelocity.x) > 0.1f)
