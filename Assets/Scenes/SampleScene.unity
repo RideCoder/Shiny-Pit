@@ -2485,6 +2485,7 @@ MonoBehaviour:
   recipeView: {fileID: 1731255618}
   craftingRecipes:
   - {fileID: 11400000, guid: c8c7e7dbd0c12ed42af840f26eadf5b8, type: 2}
+  - {fileID: 11400000, guid: 57499cda4b327184f95d00b04768bdb9, type: 2}
   craftingView: {fileID: 84910408}
 --- !u!4 &974063989
 Transform:
