@@ -65,14 +65,16 @@ public class LaserGun : PlayerWeapon
         if (!foundHit)
             return; // No tile in range
 
-        
+        // Fire toward closest tile hit
+        Vector3 direction = (bestPoint - (Vector2)origin).normalized;
+        FireProjectile(direction);
     }
 
     private void FireProjectile(Vector3 direction)
     {
         GameObject proj = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
 
-        Projectile projectile = proj.GetComponent<Projectile>();
+        LaserProjectile projectile = proj.GetComponent<LaserProjectile>();
         projectile.damage = playerStats.GetStat(StatType.DamageMultiplier) * baseDamage;
         projectile.critChance = playerStats.GetStat(StatType.CritChance);
         projectile.critDamage = playerStats.GetStat(StatType.CritMultiplier);

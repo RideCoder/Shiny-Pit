@@ -152,6 +152,7 @@ MonoBehaviour:
   weapons:
   - {fileID: 11400000, guid: 2281730d5e9e1284c98eaa4f9a5dbbcb, type: 2}
   - {fileID: 11400000, guid: 41e35644f2510564f810e1c64deadec7, type: 2}
+  - {fileID: 11400000, guid: b29e90bc00792ad40af01109fe9e0a88, type: 2}
   weaponSO: {fileID: 0}
   upgradeChosen: {fileID: 0}
   amountChosen: 0

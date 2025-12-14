@@ -15,4 +15,4 @@ MonoBehaviour:
   itemID: 0
   name: Thorns
   sprite: {fileID: 5118350282411809809, guid: b52e74f43de5e2d4f978fea47860765e, type: 3}
-  specialItem: {fileID: 7302332487594706970, guid: b10a95ca7d108da4abe6de6b738dec2f, type: 3}
+  specialItem: {fileID: 7302332487594706970, guid: 6691eb230616f4141b19ab04c71edf15, type: 3}

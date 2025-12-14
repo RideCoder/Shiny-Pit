@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9061724738262225927}
-  - component: {fileID: 8590700682959485738}
+  - component: {fileID: -5853241303923514013}
   m_Layer: 0
   m_Name: Magnifying Glass
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8590700682959485738
+--- !u!114 &-5853241303923514013
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7302332487594706970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95adbff24a4a776459505afbd6a86318, type: 3}
+  m_Script: {fileID: 11500000, guid: 602931e12fcd8dc4f95207fb66f53b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 6387833315367779100, guid: 56f053b7c1186154fac2b650617ca15c, type: 3}
+  projectilePrefab: {fileID: 0}
