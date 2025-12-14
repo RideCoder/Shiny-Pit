@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2fd0481203355f34eab9bb8f69e58cba
+guid: 39dffe7a70f06fd4eba9cde2e69b8f44
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7145198348311737387
-    second: Sprite-0002_0
+      213: 8715820745954868566
+    second: bedrock_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite-0002_0
+      name: bedrock_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 11
-        width: 61
-        height: 42
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b2434d87a08d82360800000000000000
-      internalID: 7145198348311737387
+      spriteID: 65dbe904ac0d4f870800000000000000
+      internalID: 8715820745954868566
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Sprite-0002_0: 7145198348311737387
+      bedrock_0: 8715820745954868566
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
