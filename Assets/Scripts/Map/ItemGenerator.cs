@@ -7,12 +7,14 @@ public class ItemGenerator : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public TilemapData Tilemapdata;
+    public GameObject craftingView;
     private Vector3Int tilePosition;
-    public List<GameObject> Items;
-
+    public List<GameObject> items;
+    public GameObject craftingPowerup;
+    public Recipe recipeReference;
     public void Start()
     {
-        foreach (var item in Items)
+        foreach (var item in items)
         {
             for (int i = 0; i < 100; ++i)
             {
@@ -23,6 +25,18 @@ public class ItemGenerator : MonoBehaviour
                 clone.transform.position = Tilemapdata.tilemap.CellToWorld(new Vector3Int(x, y, 0));
 
                 clone.transform.position += new Vector3(0.5f, 0.5f, -5f);
+
+                GameObject craftingPowerupClone = Instantiate(craftingPowerup);
+                craftingPowerupClone.GetComponent<CraftingPowerup>().Tilemapdata = Tilemapdata;
+                craftingPowerupClone.GetComponent<CraftingPowerup>().craftingView = craftingView;
+                craftingPowerupClone.GetComponent<CraftingPowerup>().recipeReference = recipeReference;
+                x = Random.Range(0, 500);
+                y = Random.Range(400, 510);
+                craftingPowerupClone.transform.position = Tilemapdata.tilemap.CellToWorld(new Vector3Int(x, y, 0));
+
+                craftingPowerupClone.transform.position += new Vector3(0.5f, 0.5f, -5f);
+
+
             }
 
             //  tilePosition = Tilemapdata.tilemap.WorldToCell(transform.position);
@@ -30,6 +44,8 @@ public class ItemGenerator : MonoBehaviour
             //  Tilemapdata.OnTileBroke += TileInDestroyed;
 
         }
+
+
     }
 
     

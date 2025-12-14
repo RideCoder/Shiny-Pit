@@ -48,7 +48,7 @@ MonoBehaviour:
   tilemapData: {fileID: 0}
   weaponSO: {fileID: 0}
   playerStats: {fileID: 0}
-  baseCooldown: 0.2
+  baseCooldown: 0.333
   baseDamage: 5
   upgrades:
   - {fileID: 11400000, guid: 9f0daed3e4ab53841bff6a02c01ad1a2, type: 2}

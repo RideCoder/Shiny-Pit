@@ -1,24 +1,20 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class Projectile : MonoBehaviour
+public class StoneProjectile : Projectile
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    public TilemapData tilemapData;
-    public float speed = 20f;
-    public float damage;
-    public Vector3 direction;
-    public Rigidbody2D rb;
-    public void Start()
+    public GameObject splitProjectile;
+    void Start()
     {
         Destroy(gameObject, 10f);
     }
 
-    public void Awake()
+    private void Awake()
     {
-       rb = GetComponent<Rigidbody2D>();
-       
+        rb = GetComponent<Rigidbody2D>();
+
     }
 
     public void Shoot(Vector3 dir)
@@ -30,16 +26,16 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         IDamageble damageble = collision.collider.GetComponent<IDamageble>();
-        
+
         if (damageble != null)
         {
-            
+
             damageble.TakeDamage(damage);
             Destroy(gameObject);
         }
@@ -58,7 +54,7 @@ public class Projectile : MonoBehaviour
 
         Vector2 samplePoint = hitWorld2D - normal * epsilon;
         Vector3Int tilePos = tilemap.WorldToCell((Vector3)samplePoint);
-        
+
         // Optional safety: if sampled tile is empty, try a smaller epsilon or try other contact points
         if (tilemap.GetTile(tilePos) == null)
         {
@@ -69,9 +65,18 @@ public class Projectile : MonoBehaviour
         }
 
         // Finally apply damage if there's a destructible tile there
-        
+
         tilemapData.DamageTile(tilePos, damage);
         DamageNumberManager.ShowDamage(transform.position, damage);
+        for (int i = 0; i < Random.Range(2,4); i++)
+        {
+            GameObject proj = Instantiate(splitProjectile, gameObject.transform.position + new Vector3(0, 2f, 0), Quaternion.identity);
+
+            Projectile projectile = proj.GetComponent<Projectile>();
+            projectile.damage = 5;
+            projectile.tilemapData = tilemapData;
+            projectile.Shoot(new Vector3(Random.Range(-5f, 5f), 10, Random.Range(-5f, 5f)));
+        }
         Destroy(gameObject);
     }
 

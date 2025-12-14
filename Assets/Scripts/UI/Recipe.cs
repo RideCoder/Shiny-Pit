@@ -11,11 +11,12 @@ public class Recipe : MonoBehaviour
     public GameObject UIElement;
     public GameObject recipeView;
     public CraftingRecipeSO[] craftingRecipes;
+    public GameObject craftingView;
 
     
     void Start()
     {
-        playerInventory.OnInventoryChanged += UpdateVisual;
+        //playerInventory.OnInventoryChanged += UpdateVisual;
         foreach (Transform child in contentView.transform)
         {
             Destroy(child.gameObject);
@@ -89,10 +90,12 @@ public class Recipe : MonoBehaviour
                 playerInventory.RemoveItem(ingreident.item,ingreident.quantity);
             }
             playerInventory.AddItem(craftingRecipeSO.resultItem,1);
-            
+            craftingView.SetActive(false);
+            recipeView.SetActive(false);
+
         }
-       
-       
+
+
     }
  
 

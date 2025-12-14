@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3895572685369548539}
   - component: {fileID: 7227817790019561814}
   m_Layer: 7
-  m_Name: Red Projectile
+  m_Name: Break Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 666020227897153531, guid: 3b994ceeb173bf94fb4ae1583367e435, type: 3}
+  m_Sprite: {fileID: -5650651337889624947, guid: 5a3ee4711d40cfa4880758398d1f9d29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,7 +104,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemapData: {fileID: 0}
   speed: 15
-  damage: 1
+  damage: 3
+  direction: {x: 0, y: 0, z: 0}
+  rb: {fileID: 0}
 --- !u!58 &3895572685369548539
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -140,7 +142,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.25
 --- !u!50 &7227817790019561814
 Rigidbody2D:
   serializedVersion: 5

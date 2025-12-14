@@ -13,12 +13,15 @@ public class PlayerController2D : MonoBehaviour
     public float moveInput;
     private bool jumpPressed;
     private float modifiedMoveSpeed;
-
+    public float groundAcceleration = 690f;
+    public float airAcceleration = 20f;
+    public float groundDeceleration = 80f;
+    public float airDeceleration = 20f;
     public event Action OnPlayerMoved;
 
     private void Awake()
     {
-
+        
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
     }
@@ -30,26 +33,38 @@ public class PlayerController2D : MonoBehaviour
         // Get input
         moveInput = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButton("Jump"))
             jumpPressed = true;
        
     }
 
     private void FixedUpdate()
     {
+        bool grounded = IsGrounded();
 
-        if (moveInput != 0)
-        {
-            OnPlayerMoved?.Invoke();
-        }
-        // Horizontal movement
-        rb.linearVelocity = new Vector2(moveInput * modifiedMoveSpeed, rb.linearVelocity.y);
+        float accel = grounded ? groundAcceleration : airAcceleration;
+        float decel = grounded ? groundDeceleration : airDeceleration;
 
-        // Jump
-        if (jumpPressed && IsGrounded())
+        float targetSpeed = moveInput * modifiedMoveSpeed;
+
+        float speedDiff = targetSpeed - rb.linearVelocity.x;
+
+        float rate = Mathf.Abs(targetSpeed) > 0.01f ? accel : decel;
+
+        float movement = Mathf.Clamp(speedDiff, -rate * Time.fixedDeltaTime, rate * Time.fixedDeltaTime);
+
+        rb.linearVelocity = new Vector2(
+            rb.linearVelocity.x + movement,
+            rb.linearVelocity.y
+        );
+
+        if (jumpPressed && grounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
+
+        if (Mathf.Abs(rb.linearVelocity.x) > 0.1f)
+            OnPlayerMoved?.Invoke();
 
         jumpPressed = false;
     }

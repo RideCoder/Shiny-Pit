@@ -10,7 +10,7 @@ public class CraftClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
     public Recipe recipe;
     public GameObject recipeView;
     public GameObject itemView;
-
+   
     void Start()
     {
         
