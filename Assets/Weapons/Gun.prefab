@@ -51,8 +51,8 @@ MonoBehaviour:
   baseCooldown: 0.333
   baseDamage: 5
   upgrades:
-  - {fileID: 11400000, guid: 9f0daed3e4ab53841bff6a02c01ad1a2, type: 2}
-  - {fileID: 11400000, guid: 91094f93c5422704393dd5093f0a799e, type: 2}
+  - {fileID: 11400000, guid: 41610a7730e457a40be4fd79257486b5, type: 2}
+  - {fileID: 11400000, guid: c8dc11fd1534756449f45fab5bb6964d, type: 2}
   projectilePrefab: {fileID: 6387833315367779100, guid: 0dcd7ca94d5e6964ea54846f842f609c, type: 3}
   tileLayerMask:
     serializedVersion: 2

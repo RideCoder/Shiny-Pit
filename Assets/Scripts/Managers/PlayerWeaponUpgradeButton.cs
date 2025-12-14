@@ -49,6 +49,9 @@ public class PlayerWeaponUpgradeButton : MonoBehaviour
 
     private void UpdateText()
     {
+        Debug.Log("Weapon: " + weaponSO.name);
+        Debug.Log("upgradeChosen: " + upgradeChosen.name);
+        Debug.Log("amount chosen: " + amountChosen);
         text.text = weaponSO.name + " " + upgradeChosen.name + " " + amountChosen + "%";
        
     }
