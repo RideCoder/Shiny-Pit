@@ -34,6 +34,7 @@ public class BaseStatBoost : MonoBehaviour
         {
             // Now you have weaponsManager as an "out parameter"
             // Use it directly here
+            playerStats.RaisePlayerTouchStatBoost();
             Debug.Log("Default Player Item Behavior Activated!");
             Destroy(gameObject);
         }

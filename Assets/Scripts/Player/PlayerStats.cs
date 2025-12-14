@@ -38,7 +38,7 @@ public class PlayerStats : MonoBehaviour
     public PlayerStatsData baseStatsData;
 
     [Header("Runtime Stats")]
-    private Dictionary<StatType, float> runtimeStats = new();
+    public Dictionary<StatType, float> runtimeStats = new();
     /* public float fireRateMultiplier = 1f;
      public float damageMultiplier = 1f;
      public float movementMultipler = 1f;
@@ -56,6 +56,7 @@ public class PlayerStats : MonoBehaviour
 
     public event Action OnPlayerStatUpdated;
     public event Action OnPlayerLevelUp;
+    public event Action OnPlayerTouchStatBoost;
 
     public Slider slider;
    
@@ -66,6 +67,11 @@ public class PlayerStats : MonoBehaviour
         InitializeStats();
     }
 
+    public void RaisePlayerTouchStatBoost()
+    {
+        OnPlayerTouchStatBoost?.Invoke();
+    }
+
     private void InitializeStats()
     {
         runtimeStats.Clear();
@@ -73,7 +79,10 @@ public class PlayerStats : MonoBehaviour
         foreach (var stat in baseStatsData.baseStats)
         {
             runtimeStats[stat.type] = stat.baseValue;
+            Debug.Log(stat.type);
         }
+      
+
     }
     public void Start()
     {
@@ -128,6 +137,7 @@ public class PlayerStats : MonoBehaviour
 
     public void ModifyStatMultiplicative(StatType type, float delta)
     {
+        Debug.Log(type);
         runtimeStats[type] *= delta;
         OnPlayerStatUpdated?.Invoke();
     }

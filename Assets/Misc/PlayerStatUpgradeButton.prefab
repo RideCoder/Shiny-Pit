@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7825553174661920402}
   - component: {fileID: 6132709082966386832}
   - component: {fileID: 190892076917115509}
-  - component: {fileID: 2888879829537026076}
+  - component: {fileID: 3298647089860745303}
   m_Layer: 5
   m_Name: PlayerStatUpgradeButton
   m_TagString: Untagged
@@ -122,8 +122,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2888879829537026076}
-        m_TargetAssemblyTypeName: PlayerUpgradeButton, Assembly-CSharp
+      - m_Target: {fileID: 3298647089860745303}
+        m_TargetAssemblyTypeName: PlayerStatUpgradeButton, Assembly-CSharp
         m_MethodName: SelectedButton
         m_Mode: 1
         m_Arguments:
@@ -134,7 +134,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2888879829537026076
+--- !u!114 &3298647089860745303
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,18 +143,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 364062059640092775}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25f40bf6f2942a74abd0571e3d1babe5, type: 3}
+  m_Script: {fileID: 11500000, guid: 4065bf9cabd49d04ea1b52e9e6c7bd78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
-  weaponInventoryManager: {fileID: 0}
   text: {fileID: 5609556261540810713}
-  weapons:
-  - {fileID: 11400000, guid: 2281730d5e9e1284c98eaa4f9a5dbbcb, type: 2}
-  - {fileID: 11400000, guid: 41e35644f2510564f810e1c64deadec7, type: 2}
-  weaponSO: {fileID: 0}
-  upgradeChosen: {fileID: 0}
-  amountChosen: 0
+  stats: {fileID: 0}
+  minMultiplier: 1.05
+  maxMultiplier: 1.25
+  excludedStats: 090000000a000000
 --- !u!1 &1528742297321412788
 GameObject:
   m_ObjectHideFlags: 0
