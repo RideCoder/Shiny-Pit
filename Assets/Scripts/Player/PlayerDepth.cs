@@ -14,7 +14,13 @@ public class PlayerDepth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        text.text = "Depth: " + gameObject.transform.position.y.ToString() + " Time Left: " + WorldState.worldTime;
+
+        float timeRemaining = WorldState.worldTime;
+
+        int minutes = Mathf.FloorToInt(timeRemaining / 60f);
+        int seconds = Mathf.FloorToInt(timeRemaining % 60f);
+
+        text.text = $"Time Left: {minutes:0}:{seconds:00}";
+
     }
 }

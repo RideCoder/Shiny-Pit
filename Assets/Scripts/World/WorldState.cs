@@ -8,7 +8,7 @@ public class WorldState : MonoBehaviour {
     public TilemapData tilemapData;
 
 
-    public static float worldTime = 1200f;
+    public static float worldTime = 600f;
 
     public void Update()
     {
